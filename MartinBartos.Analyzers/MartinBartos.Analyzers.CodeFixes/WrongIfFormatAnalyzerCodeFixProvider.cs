@@ -39,9 +39,9 @@ namespace MartinBartos.Analyzers
 
             context.RegisterCodeFix(
                 CodeAction.Create(
-                    title: CodeFixResources.CodeFixTitle,
+                    title: CodeFixResources.WrongIfFormatCodeFixTitle,
                     createChangedDocument: c => AddWhitespaceAsync(context.Document, declaration, c),
-                    equivalenceKey: nameof(CodeFixResources.CodeFixTitle)),
+                    equivalenceKey: nameof(CodeFixResources.WrongIfFormatCodeFixTitle)),
                 diagnostic);
 
             declaration.ChildTokens().First().TrailingTrivia.Add(SyntaxFactory.Whitespace(" "));
