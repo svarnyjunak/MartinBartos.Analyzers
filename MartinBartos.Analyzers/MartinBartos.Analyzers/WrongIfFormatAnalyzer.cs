@@ -1,12 +1,8 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
-using System.Threading;
 
 namespace MartinBartos.Analyzers
 {
@@ -28,7 +24,7 @@ namespace MartinBartos.Analyzers
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
             context.EnableConcurrentExecution();
-
+            
             context.RegisterSyntaxTreeAction(syntaxTreeContext =>
             {
                 var root = syntaxTreeContext.Tree.GetRoot(syntaxTreeContext.CancellationToken);

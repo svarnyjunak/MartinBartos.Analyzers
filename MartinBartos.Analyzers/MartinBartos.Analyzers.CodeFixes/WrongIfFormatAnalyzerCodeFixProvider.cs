@@ -45,7 +45,6 @@ namespace MartinBartos.Analyzers
                 diagnostic);
 
             declaration.ChildTokens().First().TrailingTrivia.Add(SyntaxFactory.Whitespace(" "));
-
         }
 
         private async Task<Document> AddWhitespaceAsync(Document document, IfStatementSyntax ifStatement, CancellationToken cancellationToken)

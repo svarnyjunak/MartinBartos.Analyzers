@@ -61,6 +61,33 @@ namespace MartinBartos.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Multiple empty lines are not allowed..
+        /// </summary>
+        internal static string MultipleLinesAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("MultipleLinesAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove duplicit empty line..
+        /// </summary>
+        internal static string MultipleLinesAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("MultipleLinesAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove duplicit empty line..
+        /// </summary>
+        internal static string MultipleLinesAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("MultipleLinesAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to After if keyword should be space.
         /// </summary>
         internal static string WrongIfFormatAnalyzerDescription {

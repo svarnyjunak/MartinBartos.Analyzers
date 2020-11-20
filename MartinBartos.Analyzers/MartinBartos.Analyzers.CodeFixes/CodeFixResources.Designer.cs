@@ -61,6 +61,15 @@ namespace MartinBartos.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove empty line.
+        /// </summary>
+        internal static string MultipleLinesCodeFixTitle {
+            get {
+                return ResourceManager.GetString("MultipleLinesCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add space.
         /// </summary>
         internal static string WrongIfFormatCodeFixTitle {
