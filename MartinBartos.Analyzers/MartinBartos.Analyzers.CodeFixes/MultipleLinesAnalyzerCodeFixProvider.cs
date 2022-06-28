@@ -17,10 +17,7 @@ namespace MartinBartos.Analyzers
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(MultipleLinesAnalyzerCodeFixProvider)), Shared]
     public class MultipleLinesAnalyzerCodeFixProvider : CodeFixProvider
     {
-        public sealed override ImmutableArray<string> FixableDiagnosticIds
-        {
-            get { return ImmutableArray.Create(MultipleLinesAnalyzer.DiagnosticId); }
-        }
+        public sealed override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(MultipleLinesAnalyzer.DiagnosticId);
 
         public sealed override FixAllProvider GetFixAllProvider()
         {

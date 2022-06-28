@@ -19,7 +19,7 @@ namespace MartinBartos.Analyzers {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,7 +61,34 @@ namespace MartinBartos.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Multiple empty lines are not allowed..
+        ///   Looks up a localized string similar to File scoped namespace and type declaration should have empty line between..
+        /// </summary>
+        internal static string FileScopedNamespaceAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("FileScopedNamespaceAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add empty line between namespace and type declaration.
+        /// </summary>
+        internal static string FileScopedNamespaceAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("FileScopedNamespaceAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add empty line between namespace and type declaration.
+        /// </summary>
+        internal static string FileScopedNamespaceAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("FileScopedNamespaceAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiple empty lines are not allowed.
         /// </summary>
         internal static string MultipleLinesAnalyzerDescription {
             get {
@@ -70,7 +97,7 @@ namespace MartinBartos.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove duplicit empty line..
+        ///   Looks up a localized string similar to Remove duplicit empty line.
         /// </summary>
         internal static string MultipleLinesAnalyzerMessageFormat {
             get {
@@ -79,7 +106,7 @@ namespace MartinBartos.Analyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove duplicit empty line..
+        ///   Looks up a localized string similar to Remove duplicit empty line.
         /// </summary>
         internal static string MultipleLinesAnalyzerTitle {
             get {

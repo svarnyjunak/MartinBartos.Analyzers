@@ -1,6 +1,5 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Collections.Immutable;
 using System.Linq;
@@ -10,7 +9,7 @@ namespace MartinBartos.Analyzers
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class MultipleLinesAnalyzer : DiagnosticAnalyzer
     {
-        public const string DiagnosticId = "MultipleLinesAnalyzer";
+        public const string DiagnosticId = "MB1010";
 
         private static readonly LocalizableString Title = new LocalizableResourceString(nameof(Resources.MultipleLinesAnalyzerTitle), Resources.ResourceManager, typeof(Resources));
         private static readonly LocalizableString MessageFormat = new LocalizableResourceString(nameof(Resources.MultipleLinesAnalyzerMessageFormat), Resources.ResourceManager, typeof(Resources));

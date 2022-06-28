@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FileScopedNamespaceAnalyzerDescription" xml:space="preserve">
+    <value>File scoped namespace and type declaration should have empty line between.</value>
+  </data>
+  <data name="FileScopedNamespaceAnalyzerMessageFormat" xml:space="preserve">
+    <value>Add empty line between namespace and type declaration</value>
+  </data>
+  <data name="FileScopedNamespaceAnalyzerTitle" xml:space="preserve">
+    <value>Add empty line between namespace and type declaration</value>
+  </data>
   <data name="MultipleLinesAnalyzerDescription" xml:space="preserve">
-    <value>Multiple empty lines are not allowed.</value>
+    <value>Multiple empty lines are not allowed</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="MultipleLinesAnalyzerMessageFormat" xml:space="preserve">
-    <value>Remove duplicit empty line.</value>
+    <value>Remove duplicit empty line</value>
     <comment>The format-able message the diagnostic displays.</comment>
   </data>
   <data name="MultipleLinesAnalyzerTitle" xml:space="preserve">
-    <value>Remove duplicit empty line.</value>
+    <value>Remove duplicit empty line</value>
   </data>
   <data name="WrongIfFormatAnalyzerDescription" xml:space="preserve">
     <value>After if keyword should be space</value>

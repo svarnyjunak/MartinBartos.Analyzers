@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FileScopedNamespaceCodeFixTitle" xml:space="preserve">
+    <value>Add empty line between namespace and type declaration</value>
+    <comment>The title of the code fix.</comment>
+  </data>
   <data name="MultipleLinesCodeFixTitle" xml:space="preserve">
     <value>Remove empty line</value>
     <comment>The title of the code fix.</comment>

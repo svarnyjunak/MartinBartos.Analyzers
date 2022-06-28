@@ -4,25 +4,25 @@ using VerifyCS = MartinBartos.Analyzers.Test.CSharpCodeFixVerifier<
     MartinBartos.Analyzers.WrongIfFormatAnalyzer,
     MartinBartos.Analyzers.WrongIfFormatAnalyzerCodeFixProvider>;
 
-namespace MartinBartos.Analyzers.Test
+namespace MartinBartos.Analyzers.Test;
+
+[TestClass]
+public class WrongIfFormatAnalyzerUnitTests
 {
-    [TestClass]
-    public class WrongIfFormatAnalyzerUnitTests
+    //No diagnostics expected to show up
+    [TestMethod]
+    public async Task NoDiagnosticsExpected()
     {
-        //No diagnostics expected to show up
-        [TestMethod]
-        public async Task NoDiagnosticsExpected()
-        {
-            var test = @"";
+        var test = @"";
 
-            await VerifyCS.VerifyAnalyzerAsync(test);
-        }
+        await VerifyCS.VerifyAnalyzerAsync(test);
+    }
 
-        //Diagnostic and CodeFix both triggered and checked for
-        [TestMethod]
-        public async Task DiagnosticAndCodeFixExpected()
-        {
-            var test = @"
+    //Diagnostic and CodeFix both triggered and checked for
+    [TestMethod]
+    public async Task DiagnosticAndCodeFixExpected()
+    {
+        var test = @"
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -43,7 +43,7 @@ namespace MartinBartos.Analyzers.Test
         }
     }";
 
-            var fixtest = @"
+        var fixtest = @"
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -64,8 +64,7 @@ namespace MartinBartos.Analyzers.Test
         }
     }";
 
-            var expected = VerifyCS.Diagnostic(WrongIfFormatAnalyzer.DiagnosticId).WithLocation(15, 17);
-            await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
-        }
+        var expected = VerifyCS.Diagnostic(WrongIfFormatAnalyzer.DiagnosticId).WithLocation(15, 17);
+        await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
     }
 }

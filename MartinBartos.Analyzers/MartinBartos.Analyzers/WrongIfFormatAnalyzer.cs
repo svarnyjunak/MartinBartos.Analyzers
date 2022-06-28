@@ -9,7 +9,7 @@ namespace MartinBartos.Analyzers
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class WrongIfFormatAnalyzer : DiagnosticAnalyzer
     {
-        public const string DiagnosticId = "WrongIfFormatAnalyzer";
+        public const string DiagnosticId = "MB1020";
 
         private static readonly LocalizableString Title = new LocalizableResourceString(nameof(Resources.WrongIfFormatAnalyzerTitle), Resources.ResourceManager, typeof(Resources));
         private static readonly LocalizableString MessageFormat = new LocalizableResourceString(nameof(Resources.WrongIfFormatAnalyzerMessageFormat), Resources.ResourceManager, typeof(Resources));
