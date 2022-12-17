@@ -48,18 +48,41 @@ namespace MartinBartos.Analyzers
             
             if (MultipleLinesAnalyzer.ContainsMultipleLines(token.LeadingTrivia))
             {
-                formatedNode = formatedNode.ReplaceToken(token, token.WithLeadingTrivia(token.LeadingTrivia.Where(t => !t.IsKind(SyntaxKind.EndOfLineTrivia))));
+                formatedNode = formatedNode.ReplaceToken(token, token.WithLeadingTrivia(GetWithoutDuplicitEmptyLines(token.LeadingTrivia)));
             }
 
             if (MultipleLinesAnalyzer.ContainsMultipleLines(token.TrailingTrivia))
             {
-                formatedNode = formatedNode.ReplaceToken(token, token.WithTrailingTrivia(token.TrailingTrivia.Where(t => !t.IsKind(SyntaxKind.EndOfLineTrivia))));
+                formatedNode = formatedNode.ReplaceToken(token, token.WithLeadingTrivia(GetWithoutDuplicitEmptyLines(token.TrailingTrivia)));
             }
 
             var oldRoot = await document.GetSyntaxRootAsync(cancellationToken);
             var newRoot = oldRoot.ReplaceNode(node, formatedNode);
 
             return document.WithSyntaxRoot(newRoot);
+        }
+
+        private IEnumerable<SyntaxTrivia> GetWithoutDuplicitEmptyLines(SyntaxTriviaList list)
+        {
+            var previous = list[0];
+
+            for (int i = 1; i < list.Count; i++)
+            {
+                var current = list[i];
+
+                if (!previous.IsKind(SyntaxKind.EndOfLineTrivia))
+                {
+                    yield return previous;
+                }
+                else if (!current.IsKind(SyntaxKind.EndOfLineTrivia))
+                {
+                    yield return previous;
+                }
+
+                previous = current;
+            }
+
+            yield return previous;
         }
     }
 }

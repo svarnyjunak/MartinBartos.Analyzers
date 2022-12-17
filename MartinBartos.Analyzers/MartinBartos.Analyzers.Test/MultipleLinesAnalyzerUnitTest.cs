@@ -44,6 +44,7 @@ public class MultipleLinesAnalyzerUnitTest
 
     namespace ConsoleApplication1
     {
+
         class ClassName
         {   
             void TestMethod1()
@@ -95,9 +96,98 @@ public class MultipleLinesAnalyzerUnitTest
                 }
             }
         }
+
     }";
 
         var expected = VerifyCS.Diagnostic(MultipleLinesAnalyzer.DiagnosticId).WithLocation(17, 5);
+        await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
+    }
+
+    //Diagnostic and CodeFix both triggered and checked for
+    [TestMethod]
+    public async Task DiagnosticAndCodeFixMultilineWithTrailingComment()
+    {
+        var test = @"
+    using System;
+
+    namespace ConsoleApplication1
+    {
+        class ClassName
+        {   
+            void TestMethod1()
+            {
+
+
+                // test
+                if (true)
+                {
+                }
+            }
+        }
+    }";
+
+        var fixtest = @"
+    using System;
+
+    namespace ConsoleApplication1
+    {
+        class ClassName
+        {   
+            void TestMethod1()
+            {
+
+                // test
+                if (true)
+                {
+                }
+            }
+        }
+    }";
+
+        var expected = VerifyCS.Diagnostic(MultipleLinesAnalyzer.DiagnosticId).WithLocation(13, 17);
+        await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
+    }
+
+    //Diagnostic and CodeFix both triggered and checked for
+    [TestMethod]
+    public async Task DiagnosticAndCodeFixMultipleLinseInsideBlock()
+    {
+        var test = @"
+    using System;
+
+    namespace ConsoleApplication1
+    {
+        class ClassName
+        {   
+            void TestMethod1()
+            {
+                if (true)
+                {
+
+
+                }
+            }
+        }
+    }";
+
+        var fixtest = @"
+    using System;
+
+    namespace ConsoleApplication1
+    {
+        class ClassName
+        {   
+            void TestMethod1()
+            {
+                if (true)
+                {
+
+                }
+            }
+        }
+    }";
+
+        var expected = VerifyCS.Diagnostic(MultipleLinesAnalyzer.DiagnosticId).WithLocation(14, 17);
         await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
     }
 }
